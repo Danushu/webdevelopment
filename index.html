@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Landing Page</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      display: flex;
+      flex-direction: row;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .side-nav {
+      width: 200px;
+      background-color: #f4f4f4;
+      padding: 15px;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .side-nav ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .side-nav ul li {
+      margin: 10px 0;
+    }
+
+    .side-nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .side-nav ul li a:hover {
+      color: #007BFF;
+    }
+
+    .content {
+      flex-grow: 1;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      position: relative;
+    }
+
+    header h1 {
+      position: relative;
+      z-index: 2;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      height: 150px;
+      background: linear-gradient(to bottom, #007BFF, #fff);
+      z-index: 1;
+    }
+
+    .page-section {
+      display: none;
+    }
+
+    .page-section.active {
+      display: block;
+    }
+
+    .decorative-image {
+      max-width: 500px;
+      margin: 10px auto;
+      display: block;
+    }
+
+    .welcome-section {
+      
+      background: url('home-bg.jpg') no-repeat center center/cover;
+      padding: 30px;
+      border-radius: 10px;
+      color: #fff;
+    }
+
+    .about-section {
+      background: #f9f9f9;
+      padding: 20px;
+      border: 2px dashed #007BFF;
+      border-radius: 10px;
+      position: relative;
+    }
+
+    .about-section::after {
+      content: "❤️";
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 24px;
+      color: #007BFF;
+    }
+
+    .product {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+    }
+
+    .product-image img {
+      max-width: 150px;
+      margin-right: 20px;
+    }
+
+    .cta-button {
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-right: 5px;
+    }
+
+    .cta-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+  <script>
+    function showPage(pageId) {
+      const sections = document.querySelectorAll('.page-section');
+      sections.forEach(section => section.classList.remove('active'));
+      const targetSection = document.getElementById(pageId);
+      if (targetSection) targetSection.classList.add('active');
+    }
+
+    function addToCart(productName) {
+      alert(`${productName} has been added to your cart!`);
+    }
+
+    function buyNow(productName) {
+      alert(`Proceeding to buy ${productName}`);
+    }
+  </script>
+</head>
+<body>
+  <div class="side-nav">
+    <ul>
+      <li><a href="#" onclick="showPage('welcome')">Home</a></li>
+      <li><a href="#" onclick="showPage('about')">About Us</a></li>
+      <li><a href="#" onclick="showPage('shop')">Shop</a></li>
+      <li><a href="#" onclick="showPage('contact')">Contact Us</a></li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <header>
+      <h1>Welcome to Our Store</h1>
+    </header>
+
+    <main>
+      <section id="welcome" class="page-section active">
+  <div class="welcome-section">
+    <img src="C:\Users\akhil\Downloads\OIP (1).jpeg" alt="Welcome Icon" class="decorative-image">
+    <h2 style="color: black;">Welcome to Our Store</h2>  <!-- Font color set to black -->
+    <pre style="color: black;">
+<b>Welcome to our store - Your Ultimate Electronics Destination!</b>
+
+At electronic store, we’re passionate about bringing the latest and greatest in electronic devices right to your fingertips. 
+Whether you're upgrading your home,boosting your productivity, or diving into the world of entertainment, we’ve got 
+the perfect tech solutions for you.
+<b>Why Shop with Us?</b>
+
+Top Brands: Explore a wide range of products from the world's leading electronic brands.
+
+Affordable Prices: Get the best deals without compromising on quality.
+
+Expert Support: Our tech specialists are here to guide you every step of the way.
+<b>Discover Our Collections:</b>
+
+Smartphones & Tablets: Stay connected with cutting-edge technology.
+
+Laptops & Computers: Power through work and play.
+
+Home Appliances: Upgrade your living space with smart home gadgets.
+
+Audio & Entertainment: Experience sound and visuals like never before.
+<b>Exclusive Offers</b>
+
+Don’t miss out on our latest discounts, seasonal sales, and exclusive bundles. Check out the Deals section for unbeatable prices.
+<b>Visit Us</b>
+
+Shop online from the comfort of your home or visit our store to see and feel the products in person. At electronic store, your satisfaction is our priority.
+<b>Get Started</b>
+
+Start exploring our collection today and find the perfect device to suit your needs. Shop Now!</pre>  <!-- Font color set to black -->
+  </div>
+</section>
+
+
+      <section id="about" class="page-section">
+        <div class="about-section">
+          <h2>About Us</h2>
+          <pre>Welcome to electronic store, where technology meets excellence!
+
+At electronic store, we believe in empowering lives with the latest in electronics and technology. 
+Founded in 2010, we’ve been on a mission to provide high-quality, affordable, and reliable 
+electronic devices to our valued customers.
+
+<b>Who We Are</b>
+We’re more than just an electronics store—we’re your trusted partner in navigating the 
+ever-evolving world of technology. From cutting-edge smartphones to state-of-the-art 
+home appliances, we strive to offer a curated selection of the best gadgets and devices on the market.
+
+<b>Our Mission</b>
+To make technology accessible to everyone by offering innovative products, 
+exceptional service, and expert guidance.
+
+<b>What Sets Us Apart</b>
+Quality Products: We work with top-tier brands to ensure every item meets the highest standards.
+Customer-Centric Approach: Your satisfaction is our priority, and we’re here to help every step 
+of the way.Tech Expertise: Our team of professionals is passionate about technology and always 
+ready to provide tailored advice.Our Commitment to You
+<b>At electronic store, we are dedicated to:</b>
+
+Providing transparent pricing with no hidden surprises.
+Ensuring secure and seamless shopping experiences.
+Offering reliable after-sales support and warranties on our products.
+
+<b>Join Our Community</b>
+Whether you're a tech enthusiast or a casual user, electronic store is here to help you 
+find the perfect electronic solutions for your home, work, and entertainment needs.
+
+Want to know more about us? Feel free to visit our store, connect with us online, 
+or reach out to our support team. We’re always here to help you embrace the future of technology.</pre>
+          <img src="C:\Users\akhil\Downloads\glass-counters-blurred.jpg" alt="About Decoration" class="decorative-image">
+        </div>
+      </section>
+
+      <section id="shop" class="page-section">
+        <h2>                  </h2>
+        <!-- Product List -->
+        	  <!-- Product 2 -->
+  <div class="product">
+    <div class="product-image">
+      <img src="C:\Users\akhil\Downloads\10-best-Smart-Watches-Under-50-6-1024x1024.jpg" alt="Smart Watch">
+    </div>
+    <div class="product-details">
+      <h2>Smart Watch</h2>
+      <p>Stylish and functional, track health and fitness goals.</p>
+      <p>$129.99</p>
+      <button class="cta-button" onclick="addToCart('Smart Watch')">Add to Cart</button>
+      <button class="cta-button" onclick="buyNow('Smart Watch')">Buy Now</button>
+    </div>
+  </div>
+
+  <!-- Product 3 -->
+  <div class="product">
+    <div class="product-image">
+      <img src="C:\Users\akhil\Downloads\yogesh-rahamatkar-uMNbTdS8iEY-unsplash.jpg" alt="Wireless Earbuds">
+    </div>
+    <div class="product-details">
+      <h2>Wireless Earbuds</h2>
+      <p>High-quality sound, sleek design, and long battery life.</p>
+      <p>$79.99</p>
+      <button class="cta-button" onclick="addToCart('Wireless Earbuds')">Add to Cart</button>
+      <button class="cta-button" onclick="buyNow('Wireless Earbuds')">Buy Now</button>
+    </div>
+  </div>
+
+  <!-- Product 4 -->
+  <div class="product">
+    <div class="product-image">
+      <img src="C:\Users\akhil\Downloads\bengoo-g9000-stereo-gaming-headset.jpg" alt="Gaming Headset">
+    </div>
+    <div class="product-details">
+      <h2>Gaming Headset</h2>
+      <p>Immerse yourself in your favorite games with crystal-clear sound.</p>
+      <p>$59.99</p>
+      <button class="cta-button" onclick="addToCart('Gaming Headset')">Add to Cart</button>
+      <button class="cta-button" onclick="buyNow('Gaming Headset')">Buy Now</button>
+    </div>
+  </div>
+
+  <!-- Product 5 -->
+  <div class="product">
+    <div class="product-image">
+      <img src="C:\Users\akhil\Downloads\71FPHxLLrYL.jpg" alt="4K Action Camera">
+    </div>
+    <div class="product-details">
+      <h2>4K Action Camera</h2>
+      <p>Capture adventures in stunning 4K quality.</p>
+      <p>$149.99</p>
+      <button class="cta-button" onclick="addToCart('4K Action Camera')">Add to Cart</button>
+      <button class="cta-button" onclick="buyNow('4K Action Camera')">Buy Now</button>
+    </div>
+  </div>
+
+  <!-- Product 6 -->
+  <div class="product">
+    <div class="product-image">
+      <img src="C:\Users\akhil\Downloads\th.jpeg" alt="Bluetooth Speaker">
+    </div>
+    <div class="product-details">
+      <h2>Bluetooth Speaker</h2>
+      <p>Portable speaker with rich sound and powerful bass.</p>
+      <p>$49.99</p>
+      <button class="cta-button" onclick="addToCart('Bluetooth Speaker')">Add to Cart</button>
+      <button class="cta-button" onclick="buyNow('Bluetooth Speaker')">Buy Now</button>
+    </div>
+  </div>
+
+  <!-- Product 7 -->
+  <div class="product">
+    <div class="product-image">
+      <img src="C:\Users\akhil\Downloads\fitness_trackers_1521222679.jpg" alt="Fitness Tracker">
+    </div>
+    <div class="product-details">
+      <h2>Fitness Tracker</h2>
+      <p>Track your steps, calories, and sleep patterns with ease.</p>
+      <p>$39.99</p>
+      <button class="cta-button" onclick="addToCart('Fitness Tracker')">Add to Cart</button>
+      <button class="cta-button" onclick="buyNow('Fitness Tracker')">Buy Now</button>
+    </div>
+  </div>
+
+  <!-- Product 8 -->
+  <div class="product">
+    <div class="product-image">
+      <img src="C:\Users\akhil\Downloads\pexels-jakubzerdzicki-27662902.jpg" alt="Smart Home Hub">
+    </div>
+    <div class="product-details">
+      <h2>Smart Home Hub</h2>
+      <p>Control all your smart home devices from one hub.</p>
+      <p>$99.99</p>
+      <button class="cta-button" onclick="addToCart('Smart Home Hub')">Add to Cart</button>
+      <button class="cta-button" onclick="buyNow('Smart Home Hub')">Buy Now</button>
+    </div>
+  </div>
+
+  <!-- Product 9 -->
+  <div class="product">
+    <div class="product-image">
+      <img src="C:\Users\akhil\Downloads\th (1).jpeg" alt="Electric Scooter">
+    </div>
+    <div class="product-details">
+      <h2>Electric Scooter</h2>
+      <p>Effortless and eco-friendly urban commuting.</p>
+      <p>$299.99</p>
+      <button class="cta-button" onclick="addToCart('Electric Scooter')">Add to Cart</button>
+      <button class="cta-button" onclick="buyNow('Electric Scooter')">Buy Now</button>
+    </div>
+  </div>
+
+  <!-- Product 10 -->
+  <div class="product">
+    <div class="product-image">
+      <img src="C:\Users\akhil\Downloads\OIP.jpeg" alt="Laptop Stand">
+    </div>
+    <div class="product-details">
+      <h2>Laptop Stand</h2>
+      <p>Ergonomic stand for improved posture and productivity.</p>
+      <p>$24.99</p>
+      <button class="cta-button" onclick="addToCart('Laptop Stand')">Add to Cart</button>
+      <button class="cta-button" onclick="buyNow('Laptop Stand')">Buy Now</button>
+    </div>
+  </div>
+      </section>
+
+      <section id="contact" class="page-section">
+        <h2>Contact Us</h2>
+        <p>If you have any questions, feel free to reach out at <a href="mailto:contact@store.com">contact@store.com</a>.</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>Follow us on:</p>
+      <a href="https://facebook.com">Facebook</a> |
+      <a href="https://instagram.com">Instagram</a>
+    </footer>
+  </div>
+</body>
+</html>
